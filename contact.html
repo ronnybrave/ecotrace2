@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Register - Ecotrace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> Ecotrace
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/volunteers.jpg') center/cover no-repeat;">
+        <div class="container text-center">
+            <h1>Join the Movement</h1>
+            <p>Register your organization or get in touch with our team.</p>
+        </div>
+    </header>
+
+    <section class="contact-section section-padding">
+        <div class="container">
+            <div class="grid grid-2 gap-4">
+                <div class="registration-form">
+                    <h2>NGO Registration</h2>
+                    <p class="mb-2">Fill out the form below to start tracking your plantation projects.</p>
+                    <form id="ngo-form" class="form-group">
+                        <div class="form-row">
+                            <div class="input-field">
+                                <label>Organization Name</label>
+                                <input type="text" placeholder="e.g. Green Earth Foundation" required>
+                            </div>
+                            <div class="input-field">
+                                <label>Number of Members</label>
+                                <input type="number" placeholder="e.g. 50" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-field">
+                                <label>Plantation Area (Acres)</label>
+                                <input type="number" placeholder="e.g. 10" required>
+                            </div>
+                            <div class="input-field">
+                                <label>Primary Location</label>
+                                <input type="text" placeholder="City, Country" required>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="contact@org.com" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+1 234 567 890" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register Organization</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-box mb-2">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions about our AI analysis or satellite monitoring? We're here to help.</p>
+                        <ul class="contact-details mt-2">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Eco Street, Green Valley, CA 90210</li>
+                            <li><i class="fas fa-envelope"></i> support@ecotrace.org</li>
+                            <li><i class="fas fa-phone"></i> +1 (800) ECO-TRACE</li>
+                        </ul>
+                    </div>
+                    <div class="newsletter-box bg-dark text-white p-2" style="border-radius: 15px;">
+                        <h3>Subscribe to Newsletter</h3>
+                        <p>Stay updated with the latest in climate-tech and reforestation.</p>
+                        <form class="newsletter-form mt-1">
+                            <input type="email" placeholder="Your Email" class="mb-1">
+                            <button type="submit" class="btn btn-secondary btn-block">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding bg-dark text-white">
+        <div class="container text-center">
+            <p>&copy; 2026 Ecotrace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

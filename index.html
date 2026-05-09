@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecotrace - Tracking Green Growth Through Technology</title>
+    <meta name="description" content="Ecotrace helps NGOs and communities track tree plantation activities using satellite imagery and AI analysis.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Library for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> Ecotrace
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/hero-bg.jpg') center/cover no-repeat;">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Tracking Green Growth Through Technology</h1>
+                <p>Empowering NGOs and communities to monitor reforestation projects with AI-powered satellite analysis.</p>
+                <div class="hero-btns">
+                    <a href="contact.html" class="btn btn-primary">Register Group</a>
+                    <a href="#projects" class="btn btn-secondary">Explore Projects</a>
+                    <a href="dashboard.html" class="btn btn-outline">Track Impact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview section-padding">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="about-img" data-aos="fade-right">
+                    <img src="assets/images/forest-about.jpg" alt="Lush Forest">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <span class="section-subtitle">Our Mission</span>
+                    <h2>Why Plantation Tracking Matters</h2>
+                    <p>In the fight against climate change, planting trees is only the first step. Ensuring their survival and measuring their impact is where technology meets nature. Ecotrace provides the tools to turn data into growth.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> AI-powered greenery detection</li>
+                        <li><i class="fas fa-check-circle"></i> Satellite-based monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Transparent impact reporting</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats section-padding bg-light">
+        <div class="container">
+            <div class="grid grid-4 text-center">
+                <div class="stat-item" data-aos="zoom-in">
+                    <h3 class="counter" data-target="125000">0</h3>
+                    <p>Trees Planted</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-delay="100">
+                    <h3 class="counter" data-target="450">0</h3>
+                    <p>NGOs Registered</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-delay="200">
+                    <h3 class="counter" data-target="85">0</h3>
+                    <p>Cities Covered</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-delay="300">
+                    <h3 class="counter" data-target="1200">0</h3>
+                    <p>Acres Monitored</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NGO Groups Section -->
+    <section id="projects" class="groups section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-subtitle">Our Partners</span>
+                <h2>Active Plantation Drives</h2>
+            </div>
+            <div class="grid grid-3" id="groups-container">
+                <!-- Group cards will be loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Global Impact Map</h2>
+                <p>Explore our monitored plantation sites across the globe.</p>
+            </div>
+            <div id="map" style="height: 500px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"></div>
+        </div>
+    </section>
+
+    <!-- AI Satellite Analysis Section -->
+    <section class="ai-analysis section-padding">
+        <div class="container">
+            <div class="grid grid-2 items-center">
+                <div class="analysis-text" data-aos="fade-right">
+                    <span class="section-subtitle">Futuristic Monitoring</span>
+                    <h2>AI & Satellite Analysis</h2>
+                    <p>We use high-resolution satellite imagery and advanced machine learning algorithms to track vegetation health and green cover expansion over time.</p>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="metric-label">Green Cover Increase</span>
+                            <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                            <span class="metric-value">75%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Carbon Sequestration</span>
+                            <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
+                            <span class="metric-value">60%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="analysis-visual" data-aos="fade-left">
+                    <div class="comparison-slider">
+                        <img src="assets/images/satellite-comparison.jpg" alt="Satellite Comparison">
+                        <div class="slider-label before">Before</div>
+                        <div class="slider-label after">After</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<!-- Features Section -->
+<section class="features section-padding bg-dark text-white">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-subtitle">Smart Monitoring Tools</span>
+            <h2>Platform Features</h2>
+            <p>Ecotrace combines satellite technology, AI analysis, and transparent reporting to monitor real environmental impact.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-satellite"></i>
+                <h3>Satellite Comparison</h3>
+                <p>Compare before and after plantation growth using satellite imagery and AI-powered monitoring.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Location Tracking</h3>
+                <p>Track plantation coordinates, visualize project locations, and manage plantation zones easily.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-brain"></i>
+                <h3>AI Detection</h3>
+                <p>Analyze greenery growth, plantation health, and vegetation density through intelligent detection.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-users"></i>
+                <h3>Group Collaboration</h3>
+                <p>NGOs and volunteer groups can manage plantation drives and monitor collective progress together.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-chart-line"></i>
+                <h3>Impact Reports</h3>
+                <p>Generate environmental reports including tree counts, carbon offset estimates, and green cover increase.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Satellite Data Upload</h3>
+                <p>Upload plantation images and satellite datasets directly for long-term monitoring and validation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Gallery Section -->
+    <section class="gallery section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in"><img src="assets/images/volunteers.jpg" alt="Volunteers"></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="assets/images/hero-bg.jpg" alt="Forest"></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="assets/images/forest-about.jpg" alt="Greenery"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding bg-dark text-white">
+        <div class="container">
+            <div class="grid grid-4">
+                <div class="footer-info">
+                    <a href="#" class="logo"><i class="fas fa-leaf"></i> Ecotrace</a>
+                    <p>Tracking Green Growth Through Technology. Join us in making the planet greener.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@ecotrace.org</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Ecotrace. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

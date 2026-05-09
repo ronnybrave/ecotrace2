@@ -1,0 +1,43 @@
+{
+    "stats": {
+        "totalTrees": 125000,
+        "ngosRegistered": 450,
+        "citiesCovered": 85,
+        "greenAreaIncreased": 1200
+    },
+    "ngos": [
+        {
+            "id": 1,
+            "name": "Green Earth Foundation",
+            "logo": "https://ui-avatars.com/api/?name=Green+Earth&background=2ecc71&color=fff",
+            "treesPlanted": 25000,
+            "areaCovered": "120 Acres",
+            "location": "Amazon, Brazil",
+            "status": "Active"
+        },
+        {
+            "id": 2,
+            "name": "EcoWarriors NGO",
+            "logo": "https://ui-avatars.com/api/?name=Eco+Warriors&background=27ae60&color=fff",
+            "treesPlanted": 18500,
+            "areaCovered": "85 Acres",
+            "location": "Nairobi, Kenya",
+            "status": "Active"
+        },
+        {
+            "id": 3,
+            "name": "Global Releaf",
+            "logo": "https://ui-avatars.com/api/?name=Global+Releaf&background=16a085&color=fff",
+            "treesPlanted": 42000,
+            "areaCovered": "200 Acres",
+            "location": "Sumatra, Indonesia",
+            "status": "Active"
+        }
+    ],
+    "locations": [
+        { "lat": -3.4653, "lng": -62.2159, "name": "Amazon Basin", "trees": 25000 },
+        { "lat": -1.2921, "lng": 36.8219, "name": "Nairobi Forest", "trees": 18500 },
+        { "lat": -0.7893, "lng": 113.9213, "name": "Sumatra Reforestation", "trees": 42000 },
+        { "lat": 28.6139, "lng": 77.2090, "name": "Delhi Green Belt", "trees": 12000 }
+    ]
+}

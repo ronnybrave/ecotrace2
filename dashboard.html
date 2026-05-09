@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Dashboard - Ecotrace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> Ecotrace
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-wrapper container section-padding">
+        <div class="dashboard-sidebar">
+            <div class="user-profile text-center">
+                <div class="avatar">
+                    <img src="https://ui-avatars.com/api/?name=Green+Earth+NGO&background=2ecc71&color=fff" alt="NGO Logo">
+                </div>
+                <h3>Green Earth NGO</h3>
+                <p>Verified Organization</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#"><i class="fas fa-th-large"></i> Overview</a></li>
+                <li><a href="#"><i class="fas fa-tree"></i> My Plantations</a></li>
+                <li><a href="#"><i class="fas fa-map-marker-alt"></i> Locations</a></li>
+                <li><a href="#"><i class="fas fa-chart-pie"></i> Impact Reports</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </div>
+
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <h2>Project Overview</h2>
+                <div class="header-actions">
+                    <button class="btn btn-primary btn-sm" id="open-modal"><i class="fas fa-plus"></i> New Plantation</button>
+                </div>
+            </header>
+
+            <div class="grid grid-3 gap-1">
+                <div class="stat-card">
+                    <span class="label">Total Trees</span>
+                    <h3 class="value">12,450</h3>
+                    <span class="trend positive"><i class="fas fa-arrow-up"></i> 12% this month</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Survival Rate</span>
+                    <h3 class="value">94.2%</h3>
+                    <span class="trend neutral">Stable</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">CO2 Offset</span>
+                    <h3 class="value">245 Tons</h3>
+                    <span class="trend positive"><i class="fas fa-arrow-up"></i> 8%</span>
+                </div>
+            </div>
+
+            <div class="dashboard-section mt-2">
+                <h3>Recent Activity</h3>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Trees</th>
+                                <th>Status</th>
+                                <th>AI Analysis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Amazon Basin - Sector A</td>
+                                <td>Oct 12, 2025</td>
+                                <td>2,500</td>
+                                <td><span class="badge badge-success">Active</span></td>
+                                <td><span class="badge badge-info">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Sahara Green Wall</td>
+                                <td>Jan 05, 2026</td>
+                                <td>5,000</td>
+                                <td><span class="badge badge-success">Active</span></td>
+                                <td><span class="badge badge-warning">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td>Himalayan Foothills</td>
+                                <td>Mar 20, 2026</td>
+                                <td>1,200</td>
+                                <td><span class="badge badge-primary">Pending</span></td>
+                                <td><span class="badge badge-secondary">Queued</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dashboard-section mt-2">
+                <h3>Satellite Monitoring</h3>
+                <div class="grid grid-2 gap-2">
+                    <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                    <div class="upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h4>Upload Satellite Data</h4>
+                        <p>Drag and drop GeoTIFF or JPEG files here</p>
+                        <button class="btn btn-outline btn-sm">Browse Files</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- New Plantation Modal -->
+    <div id="plantation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Plantation</h2>
+            <form id="new-plantation-form">
+                <div class="input-field">
+                    <label>Location Name</label>
+                    <input type="text" id="p-location" placeholder="e.g. Amazon Sector B" required>
+                </div>
+                <div class="form-row">
+                    <div class="input-field">
+                        <label>Plantation Date</label>
+                        <input type="date" id="p-date" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Number of Trees</label>
+                        <input type="number" id="p-trees" placeholder="e.g. 1500" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add Plantation</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Dashboard specific chart
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Green Cover Index',
+                    data: [0.2, 0.25, 0.35, 0.42, 0.55, 0.68],
+                    borderColor: '#2ecc71',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(46, 204, 113, 0.1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>
